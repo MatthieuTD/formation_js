@@ -10,8 +10,6 @@
 
 const colors = ['blue', 'red', 'green', 'black', 'grey', 'orange', 'purple'];
 const section =  document.getElementById('exo1');
-
-document.body;
 const maDiv = document.createElement('div'); // crée une div orpheline
 
 colors.forEach(function(color){
@@ -76,12 +74,24 @@ exo3.id = "exo3";
 document.body.append(exo3);
 
 let div = document.createElement('div');
+
+div.id = "divExo3"
 div.textContent = names[0];
 exo3.append(div);
 let parent = document.getElementById('exo3')
 
 exo3.addEventListener('click', function(){
-    let rand = Math.floor(Math.random()*names.length);    
+    let parent = document.getElementById('exo3')
+    let rand = Math.floor(Math.random()*names.length); 
+    let enfant = document.getElementById('divExo3')
+
+    parent.removeChild(enfant)
+    let div = document.createElement('div');
+
+    div.id = "divExo3"
+    exo3.append(div);
+    
+    
 
     div.textContent = names[rand];
 });
@@ -125,13 +135,13 @@ button.addEventListener('click',function(){
    
 
    if (isActive == true){
-    document.addEventListener("mousemove",coord,true);
+    document.addEventListener("mousemove",coord);
        
 
    }
 
    if (isActive == false){
-    document.removeEventListener("mousemove",coord,true);
+    document.removeEventListener("mousemove",coord);
 
    }
     
